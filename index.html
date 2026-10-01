@@ -246,7 +246,7 @@ nav button.on{color:var(--acc)}
 
   <div class="card">
     <p class="lead">What did you get done?</p>
-    <p class="subt">Tap everything you did. Ten wins the day.</p>
+    <p class="subt">Tap everything you did. 18 wins the day.</p>
     <div id="winList"></div>
     <div class="addrow"><input id="customIn" placeholder="Something else&#8230;" enterkeyhint="done"><button data-act="addcustom">Add</button></div>
     <div class="pills" id="custom"></div>
@@ -260,7 +260,7 @@ nav button.on{color:var(--acc)}
     <div class="calhead"><button data-act="cprev" id="calPrev" aria-label="Previous month">&#8249;</button><h2 id="calTitle"></h2><button data-act="cnext" id="calNext" aria-label="Next month">&#8250;</button></div>
     <div class="calgrid" id="calGrid"></div>
     <div class="calsum" id="calSum"></div>
-    <div class="calkey"><span><i class="k won"></i>Won (10+)</span><span><i class="k part"></i>Some wins</span></div>
+    <div class="calkey"><span><i class="k won"></i>Won (18+)</span><span><i class="k part"></i>Some wins</span></div>
   </div>
   <div class="card" id="goalsCard"></div>
   <div class="card">
@@ -324,7 +324,7 @@ nav button.on{color:var(--acc)}
 'use strict';
 var KEY='daily_app_v1';
 var TABS=['today','goals','tasks','clear'];
-var WIN_AT=10,HUGE=15;
+var WIN_AT=18,HUGE=25;
 
 /* ---------- the win list: [id, label, goal] ---------- */
 var GROUPS=[
@@ -361,7 +361,7 @@ var MAP=[
 var WORDS=[
  {t:"Peace isn't the absence of problems. It's knowing you don't carry them alone. Go slow this morning. Breathe, daven, and take one small step. That's all today asks of you."},
  {t:"Every morning is a fresh start. Yesterday doesn't get a vote today. Whatever happened, the slate is clean. Show up and do the next right thing."},
- {t:"You don't need a perfect day. You need a few honest wins. Ten small things done with intention beat a big plan you never start."},
+ {t:"You don't need a perfect day. You need a few honest wins. A stack of small things done with intention beats a big plan you never start."},
  {t:"Before the noise gets in, give yourself one quiet minute. Not to fix anything. Just to remember that Hashem is running the world, and you don't have to."},
  {t:"The person you want to be a year from now is built in boring moments. The workout you almost skipped. The prayer you said when you didn't feel like it. Today is full of those moments."},
  {t:"You don't have to have it all figured out. Do your part, and trust that the rest is in better hands than yours."},
@@ -379,7 +379,7 @@ var WORDS=[
  {t:"Fear shrinks when you remember you're not alone. Walk into today with your head up."},
  {t:"Guard your mornings. The first hour sets the tone for everything after it. Give it to Hashem and to yourself before you give it to your phone."},
  {t:"Write down what's weighing on you, hand it over, and get to work on what's actually yours to do."},
- {t:"Small wins are still wins. Count them. A day with ten good choices is a good day, no matter what else happened."},
+ {t:"Small wins are still wins. Count them. A day full of good choices is a good day, no matter what else happened."},
  {t:"Courage isn't feeling no fear. It's doing the thing anyway, knowing you're not alone in it."},
  {t:"Be patient with yourself. You're building a body, a mind, and a soul all at once. That takes time, and you're doing it."},
  {t:"When your thoughts get loud, you don't have to argue with every one. Breathe, and let them pass like cars on the road."},
