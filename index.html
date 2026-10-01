@@ -145,6 +145,68 @@ nav button.on{color:var(--acc)}
 .pfoot{display:flex;gap:10px;max-width:460px;width:100%;margin:0 auto}
 .pbtn{flex:1;border:0;border-radius:18px;padding:16px;font-size:17px;font-weight:700;background:#fff;color:#0f6176}
 .pbtn.ghost{background:rgba(255,255,255,.22);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#goalsTitle{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+
+/* winning-days calendar */
+.calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.calhead h2{font-size:15px;color:var(--ink);text-transform:none;letter-spacing:-.01em;font-weight:800}
+.calhead button{border:0;background:var(--soft);width:32px;height:32px;border-radius:10px;font-size:19px;line-height:1;display:grid;place-items:center}
+.calhead button:disabled{opacity:.3}
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cwd{font-size:11px;font-weight:700;color:var(--sub);text-align:center}
+.cday{aspect-ratio:1;border:0;border-radius:12px;background:#f8efeb;font-size:14px;font-weight:700;color:#9a8a86;display:grid;place-items:center;padding:0}
+.cday.part{background:#ffe1d3;color:#b4532c}
+.cday.won{background:linear-gradient(135deg,#ff6a53,#ff9566);color:#fff;box-shadow:0 4px 10px rgba(255,106,83,.25)}
+.cday.today{box-shadow:0 0 0 2px #fff,0 0 0 4px #ff6a53}
+.cday.fut{background:transparent;color:#dccdc8}
+.cday.blank{visibility:hidden}
+.calsum{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin-top:16px}
+.calkey{display:flex;gap:16px;font-size:12.5px;color:var(--sub);font-weight:600;margin-top:8px}
+.calkey .k{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.calkey .k.won{background:#ff7a5c}.calkey .k.part{background:#ffd9c8}
+
+/* private section */
+.vault{position:fixed;inset:0;z-index:60;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;color:#f6ece8;
+ background:linear-gradient(180deg,#130e11 0%,#1b1418 60%,#26171a 100%);
+ padding:calc(env(safe-area-inset-top,0px) + 14px) 18px calc(env(safe-area-inset-bottom,0px) + 34px)}
+.vault.on{display:block;animation:fade .25s ease both}
+.vin{max-width:480px;margin:0 auto}
+.vhead{display:flex;justify-content:space-between;align-items:center;margin:6px 2px 4px}
+.vtitle{font-size:28px;font-weight:800;letter-spacing:-.02em}
+.vbtn-s{border:0;background:rgba(255,255,255,.1);color:#f6ece8;border-radius:999px;padding:8px 15px;font-size:14px;font-weight:700}
+.vcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);border-radius:22px;padding:18px;margin-top:14px}
+.vk{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#b9a29b;margin-bottom:8px}
+.vhero{display:flex;align-items:center;gap:18px}
+.vring{position:relative;width:96px;height:96px;flex-shrink:0}
+.vring svg{transform:rotate(-90deg);display:block}
+.vring span{position:absolute;inset:0;display:grid;place-items:center;font-size:30px}
+.vbig{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(135deg,#ff6a53,#ffb27f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vlab{font-size:17px;font-weight:700;margin-top:2px}
+.vsub{font-size:14px;color:#b9a29b;margin:3px 0 0}
+.vms{display:inline-block;margin-top:9px;font-size:12.5px;font-weight:700;color:#ffb38f;background:rgba(255,120,90,.14);border-radius:999px;padding:4px 10px}
+.vline{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.01em}
+.vp{font-size:16px;line-height:1.55;margin:0}
+.vslipcard{background:rgba(255,120,90,.12);border-color:rgba(255,120,90,.25)}
+.vsteps{margin:4px 0 0;padding-left:20px;font-size:16px;line-height:1.5}
+.vsteps li{margin-bottom:6px}
+.vmain{width:100%;border:0;border-radius:18px;padding:16px;font-size:17px;font-weight:800;color:#fff;background:linear-gradient(135deg,#ff6a53,#ff9566);margin-top:14px}
+.vghost{width:100%;border:0;border-radius:16px;padding:15px;font-size:15px;font-weight:700;background:rgba(255,255,255,.06);color:#ff9b85;margin-top:16px}
+.vlink{border:0;background:none;color:#b9a29b;font-size:14px;font-weight:600;margin-top:18px;text-decoration:underline}
+.vstats{display:grid;grid-template-columns:1fr 1fr;text-align:center}
+.vstats b{display:block;font-size:32px;font-weight:800;letter-spacing:-.03em}
+.vstats span{font-size:13px;color:#b9a29b;font-weight:600}
+.vault textarea.vtext{width:100%;min-height:110px;border:0;border-radius:16px;background:rgba(255,255,255,.07);color:#f6ece8;padding:14px;font-size:16px;line-height:1.5;resize:vertical}
+.vault textarea.vtext::placeholder{color:#8d7a75}
+.vault input.vdate{width:100%;border:0;border-radius:14px;background:rgba(255,255,255,.08);color:#f6ece8;padding:12px 14px;font-size:16px;margin-top:8px;color-scheme:dark;min-height:46px}
+.vgate{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.vic{font-size:38px;margin-bottom:8px}
+.vault input.vpin{width:100%;max-width:280px;display:block;margin:14px auto 0;text-align:center;font-size:24px;letter-spacing:.25em;background:rgba(255,255,255,.08);color:#fff;border-radius:16px;padding:14px;border:0}
+.vault input.vpin::placeholder{letter-spacing:normal;font-size:17px;color:#8d7a75}
+.vgate .vmain{max-width:280px}
+.verr{color:#ff9b85;font-size:14px;min-height:20px;margin-top:10px}
+.shake{animation:shake .35s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+
 @media (prefers-reduced-motion:reduce){.tab,.panic.on{animation:none}.pcirc{transition:none}}
 </style>
 </head>
@@ -184,7 +246,7 @@ nav button.on{color:var(--acc)}
 
   <div class="card">
     <p class="lead">What did you get done?</p>
-    <p class="subt">Tap everything you did. Five wins the day.</p>
+    <p class="subt">Tap everything you did. Ten wins the day.</p>
     <div id="winList"></div>
     <div class="addrow"><input id="customIn" placeholder="Something else&#8230;" enterkeyhint="done"><button data-act="addcustom">Add</button></div>
     <div class="pills" id="custom"></div>
@@ -192,8 +254,14 @@ nav button.on{color:var(--acc)}
 </section>
 
 <section class="tab" id="t-goals">
-  <div class="top"><div class="hi">The long game</div><div class="date">Goals</div></div>
+  <div class="top"><div class="hi">The long game</div><div class="date" id="goalsTitle">Goals</div></div>
   <div class="card" id="goalsTop"></div>
+  <div class="card">
+    <div class="calhead"><button data-act="cprev" id="calPrev" aria-label="Previous month">&#8249;</button><h2 id="calTitle"></h2><button data-act="cnext" id="calNext" aria-label="Next month">&#8250;</button></div>
+    <div class="calgrid" id="calGrid"></div>
+    <div class="calsum" id="calSum"></div>
+    <div class="calkey"><span><i class="k won"></i>Won (10+)</span><span><i class="k part"></i>Some wins</span></div>
+  </div>
   <div class="card" id="goalsCard"></div>
   <div class="card">
     <h2>Why</h2>
@@ -247,6 +315,8 @@ nav button.on{color:var(--acc)}
   <div class="pfoot" id="pfoot"></div>
 </div>
 
+<div class="vault" id="vault" aria-hidden="true" role="dialog" aria-label="Private"><div class="vin" id="vbody"></div></div>
+
 <div class="toast" id="toast" role="status"><span id="toastMsg"></span><button data-act="undo" id="toastUndo">Undo</button></div>
 <script>
 /* Your data stays private on this device. */
@@ -254,7 +324,7 @@ nav button.on{color:var(--acc)}
 'use strict';
 var KEY='daily_app_v1';
 var TABS=['today','goals','tasks','clear'];
-var WIN_AT=5;
+var WIN_AT=10,HUGE=15;
 
 /* ---------- the win list: [id, label, goal] ---------- */
 var GROUPS=[
@@ -262,7 +332,7 @@ var GROUPS=[
  {n:"Faith",i:[["shacharit","Shacharit","god"],["mincha","Mincha","god"],["arvit","Arvit","god"],["tefillin","Put on tefillin","god"],["torah","Learned Torah","god"],["tehillim","Said Tehillim","god"],["tzedakah","Gave tzedakah","god"],["chesed","Did an act of chesed","god"]]},
  {n:"Morning",i:[["ontime","Woke up on time","morning"],["bed","Made my bed","morning"],["nophone","No phone first hour","morning"],["journal","Morning journal","morning"],["meditate","Meditated 10 min","morning"],["sun","Got morning sunlight","morning"]]},
  {n:"Mind",i:[["read","Read 15 min","read"],["study","Studied",""],["class","Went to class",""],["homework","Did homework",""],["learn","Learned something new",""],["deep","Deep work block",""]]},
- {n:"Discipline",i:[["nopmo","No PMO","dopamine"],["cold","Cold shower","dopamine"],["scroll","No mindless scrolling","dopamine"],["phoneoff","Phone away by bedtime","dopamine"]]},
+ {n:"Discipline",i:[["cold","Cold shower","dopamine"],["scroll","No mindless scrolling","dopamine"],["phoneoff","Phone away by bedtime","dopamine"],["bedtime","In bed on time","dopamine"]]},
  {n:"Fuel",i:[["clean","Ate clean","eat"],["protein","Hit my protein","eat"],["nojunk","No junk or sugar","eat"],["prep","Meal prepped","eat"],["water","Drank enough water","eat"]]},
  {n:"Life",i:[["todo","Crossed off a to-do",""],["work","Put in real work",""],["skin","Skin care",""],["space","Cleaned my space",""],["family","Called family",""],["help","Helped someone",""]]}
 ];
@@ -291,7 +361,7 @@ var MAP=[
 var WORDS=[
  {t:"Peace isn't the absence of problems. It's knowing you don't carry them alone. Go slow this morning. Breathe, daven, and take one small step. That's all today asks of you."},
  {t:"Every morning is a fresh start. Yesterday doesn't get a vote today. Whatever happened, the slate is clean. Show up and do the next right thing."},
- {t:"You don't need a perfect day. You need a few honest wins. Five small things done with intention beat a big plan you never start."},
+ {t:"You don't need a perfect day. You need a few honest wins. Ten small things done with intention beat a big plan you never start."},
  {t:"Before the noise gets in, give yourself one quiet minute. Not to fix anything. Just to remember that Hashem is running the world, and you don't have to."},
  {t:"The person you want to be a year from now is built in boring moments. The workout you almost skipped. The prayer you said when you didn't feel like it. Today is full of those moments."},
  {t:"You don't have to have it all figured out. Do your part, and trust that the rest is in better hands than yours."},
@@ -309,7 +379,7 @@ var WORDS=[
  {t:"Fear shrinks when you remember you're not alone. Walk into today with your head up."},
  {t:"Guard your mornings. The first hour sets the tone for everything after it. Give it to Hashem and to yourself before you give it to your phone."},
  {t:"Write down what's weighing on you, hand it over, and get to work on what's actually yours to do."},
- {t:"Small wins are still wins. Count them. A day with five good choices is a good day, no matter what else happened."},
+ {t:"Small wins are still wins. Count them. A day with ten good choices is a good day, no matter what else happened."},
  {t:"Courage isn't feeling no fear. It's doing the thing anyway, knowing you're not alone in it."},
  {t:"Be patient with yourself. You're building a body, a mind, and a soul all at once. That takes time, and you're doing it."},
  {t:"When your thoughts get loud, you don't have to argue with every one. Breathe, and let them pass like cars on the road."},
@@ -361,7 +431,7 @@ function normalize(s){
   if(!s||typeof s!=='object')return b;
   if(s.days&&typeof s.days==='object')Object.keys(s.days).forEach(function(k){
     if(isKey(k)&&Array.isArray(s.days[k]))
-      b.days[k]=s.days[k].filter(function(e){return e&&typeof e.t==='string'&&typeof e.id==='string';})
+      b.days[k]=s.days[k].filter(function(e){return e&&typeof e.t==='string'&&typeof e.id==='string'&&e.id!=='w_nopmo';})
         .map(function(e){return {id:e.id,t:e.t.slice(0,80),g:(typeof e.g==='string'?e.g:'')};});
   });
   if(Array.isArray(s.loops))b.loops=s.loops.filter(function(x){return x&&typeof x.t==='string'&&typeof x.id==='string';})
@@ -413,7 +483,8 @@ function matchGoal(text){
 function goalIcon(g){for(var i=0;i<GOALS.length;i++)if(GOALS[i].id===g)return GOALS[i].icon;return '\u2713';}
 function list(k){return S.days[k]||[];}
 function has(k,id){return list(k).some(function(e){return e.id===id;});}
-function wonOn(k){return list(k).length>=WIN_AT;}
+function wins(k){return list(k).length+(cleanOn(k)?1:0);}
+function wonOn(k){return wins(k)>=WIN_AT;}
 function monthWon(){var p=today().slice(0,7),c=0;Object.keys(S.days).forEach(function(k){if(k.slice(0,7)===p&&wonOn(k))c++;});return c;}
 function wonStreak(){var s=0;for(var i=wonOn(today())?0:1;i<400;i++){if(wonOn(dayKey(i)))s++;else break;}return s;}
 
@@ -421,7 +492,7 @@ var viewBack=0;
 
 /* ---------- Today ---------- */
 function renderToday(){
-  var k=dayKey(viewBack),L=list(k),n=L.length;
+  var k=dayKey(viewBack),L=list(k),n=wins(k);
   $('hi').textContent=viewBack===0?nice(k):'Looking back';
   $('date').textContent=viewBack===0?'Today':nice(k,{weekday:'short',month:'short',day:'numeric'});
   $('nextBtn').disabled=viewBack===0;
@@ -438,8 +509,8 @@ function renderToday(){
   var st,sub;
   if(n===0){st='Get the first one';sub=WIN_AT+' wins the day';}
   else if(n<WIN_AT){st=(WIN_AT-n)+' more to win the day';sub='You\u2019re on your way';}
-  else if(n<10){st='Day won';sub='Everything else is a bonus';}
-  else{st='Huge day';sub='10+ wins. That\u2019s the standard';}
+  else if(n<HUGE){st='Day won';sub='Everything else is a bonus';}
+  else{st='Huge day';sub=HUGE+'+ wins. That\u2019s the standard';}
   $('hSt').textContent=st;$('hSub').textContent=sub;
   var mw=monthWon();$('hMon').textContent=mw+(mw===1?' day':' days')+' won this month';$('hMon').style.display=mw?'':'none';
 
@@ -450,14 +521,14 @@ function renderToday(){
     }).join('')+'</div></div>';
   }).join('');
 
-  $('custom').innerHTML=L.filter(function(e){return e.id.indexOf('w_')!==0||!ITEMS[e.id.slice(2)];}).map(function(e){
+  $('custom').innerHTML=(cleanOn(k)?'<span class="pill">\u2713 Stayed disciplined</span>':'')+L.filter(function(e){return e.id.indexOf('w_')!==0||!ITEMS[e.id.slice(2)];}).map(function(e){
     return '<span class="pill">'+(e.g?goalIcon(e.g)+' ':'\u2713 ')+esc(e.t)+'<button class="x" data-act="unlog" data-id="'+esc(e.id)+'" aria-label="Remove">\u00D7</button></span>';
   }).join('');
 }
 
 /* ---------- Goals ---------- */
 function goalStats(id){
-  var last7=0,streak=0,todayHit=false,hit=function(k){return list(k).some(function(e){return e.g===id;});};
+  var last7=0,streak=0,todayHit=false,hit=function(k){return (id==='dopamine'&&cleanOn(k))||list(k).some(function(e){return e.g===id;});};
   for(var i=0;i<7;i++)if(hit(dayKey(i))){last7++;if(i===0)todayHit=true;}
   for(var j=todayHit?0:1;j<400;j++){if(hit(dayKey(j)))streak++;else break;}
   return {last7:last7,streak:streak,todayHit:todayHit};
@@ -466,6 +537,7 @@ function renderGoals(){
   var mw=monthWon(),ws=wonStreak();
   $('goalsTop').innerHTML='<div class="gtop"><div><div class="gbig">'+mw+'</div><div class="glab">'+(mw===1?'day':'days')+' won this month</div></div>'+
     '<div><div class="gbig">'+ws+'</div><div class="glab">won in a row</div></div></div>';
+  renderCal();
   var C=2*Math.PI*23;
   $('goalsCard').innerHTML=GOALS.map(function(g){
     var s=goalStats(g.id),pct=s.last7/7;
@@ -475,6 +547,25 @@ function renderGoals(){
       '<span class="ic">'+g.icon+'</span></div><div style="flex:1;min-width:0"><div class="gt">'+esc(g.title)+'</div><div class="gs">'+esc(g.sub)+' \u00B7 '+sub+'</div></div>'+
       (s.todayHit?'<div class="chk" aria-label="Done today">\u2713</div>':'')+'</div>';
   }).join('');
+}
+
+var calBack=0;
+function renderCal(){
+  var now=new Date(),first=new Date(now.getFullYear(),now.getMonth()-calBack,1,12),Y=first.getFullYear(),M=first.getMonth(),dim=new Date(Y,M+1,0).getDate(),t=today();
+  $('calTitle').textContent=first.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+  $('calNext').disabled=calBack===0;$('calPrev').disabled=calBack>=24;
+  var h=['S','M','T','W','T','F','S'].map(function(d){return '<div class="cwd">'+d+'</div>';}).join('');
+  for(var b=0;b<first.getDay();b++)h+='<div class="cday blank"></div>';
+  var won=0,tot=0;
+  for(var d=1;d<=dim;d++){
+    var k=Y+'-'+pad(M+1)+'-'+pad(d),n=wins(k),cls='cday';
+    if(k>t)cls+=' fut';else if(n>=WIN_AT){cls+=' won';won++;}else if(n>0)cls+=' part';
+    if(k===t)cls+=' today';
+    h+=(k>t?'<div class="'+cls+'">'+d+'</div>':'<button class="'+cls+'" data-act="cday" data-k="'+k+'" aria-label="'+k+', '+n+' wins">'+d+'</button>');
+  }
+  Object.keys(S.days).forEach(function(k){if(wonOn(k))tot++;});
+  $('calGrid').innerHTML=h;
+  $('calSum').innerHTML='<span>'+won+(won===1?' day':' days')+' won</span><span>'+tot+' won all time</span>';
 }
 
 /* ---------- To do ---------- */
@@ -559,6 +650,124 @@ function startBreath(){
   },1000);
 }
 
+/* ---------- private section ---------- */
+var VKEY='daily_vault_v1';
+var MS=[1,3,7,14,21,30,45,60,90,120,180,270,365,500,730,1000];
+var VLINES=[
+ "Don't trade {n} days for ten minutes.",
+ "The urge always passes. Every time you let it pass, the next one gets weaker.",
+ "You're not giving something up. You're getting your focus, your energy, and your self-respect back.",
+ "Discipline here is discipline everywhere. The way you do this is the way you do everything.",
+ "The man you're becoming is built on promises you keep when no one is watching.",
+ "Hard now, easy later. Easy now, hard later.",
+ "Guard your eyes, guard your mind. What you let in is what you become.",
+ "Boredom, stress, and late nights are the triggers. Have your plan ready before they show up.",
+ "Phone out of the bedroom tonight. Make the slip impossible, not just unlikely.",
+ "Every clean day is a vote for who you want to be.",
+ "Real confidence comes from keeping promises to yourself.",
+ "You don't have to win forever. Just today.",
+ "Strength isn't never feeling the pull. It's feeling it and walking away."
+];
+function sha256(s){
+  s=unescape(encodeURIComponent(s));
+  function rr(v,n){return (v>>>n)|(v<<(32-n));}
+  var mp=Math.pow,max=mp(2,32),out='',words=[],bits=s.length*8,i,j,hash=[],k=[],pc=0,comp={};
+  for(var c=2;pc<64;c++){if(!comp[c]){for(i=0;i<313;i+=c)comp[i]=c;hash[pc]=(mp(c,.5)*max)|0;k[pc++]=(mp(c,1/3)*max)|0;}}
+  s+='\x80';while(s.length%64-56)s+='\x00';
+  for(i=0;i<s.length;i++){j=s.charCodeAt(i);words[i>>2]|=j<<((3-i)%4)*8;}
+  words[words.length]=((bits/max)|0);words[words.length]=bits;
+  for(j=0;j<words.length;){var w=words.slice(j,j+=16),old=hash;hash=hash.slice(0,8);
+    for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],A=hash[0],E=hash[4];
+      var t1=hash[7]+(rr(E,6)^rr(E,11)^rr(E,25))+((E&hash[5])^((~E)&hash[6]))+k[i]+(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
+      var t2=(rr(A,2)^rr(A,13)^rr(A,22))+((A&hash[1])^(A&hash[2])^(hash[1]&hash[2]));
+      hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0;}
+    for(i=0;i<8;i++)hash[i]=(hash[i]+old[i])|0;}
+  for(i=0;i<8;i++)for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;out+=((b<16)?0:'')+b.toString(16);}
+  return out;
+}
+function vnorm(v){return {hash:String(v.hash),salt:String(v.salt||''),start:isKey(v.start)?v.start:today(),best:typeof v.best==='number'?v.best:0,
+  history:Array.isArray(v.history)?v.history.filter(function(h){return h&&isKey(h.s)&&isKey(h.e);}).slice(-100):[],
+  reasons:typeof v.reasons==='string'?v.reasons.slice(0,3000):'',slipMsg:isKey(v.slipMsg)?v.slipMsg:''};}
+var V=null;try{var vr=JSON.parse(localStorage.getItem(VKEY));if(vr&&typeof vr==='object'&&vr.hash)V=vnorm(vr);}catch(e){}
+function vsave(){try{if(V)localStorage.setItem(VKEY,JSON.stringify(V));else localStorage.removeItem(VKEY);}catch(e){}}
+var vUnlocked=false,vUrge=false,vLeft=0,vTimer=null,vArm='',vArmT=null,vErr='';
+function cleanOn(k){
+  if(!V||k>today())return false;
+  for(var i=0;i<V.history.length;i++)if(V.history[i].e===k)return false;
+  if(k>=V.start)return true;
+  for(var j=0;j<V.history.length;j++){var h=V.history[j];if(k>=h.s&&k<h.e)return true;}
+  return false;
+}
+function vDays(){return V?Math.max(0,dayIndex(today())-dayIndex(V.start)):0;}
+function arm(name){vArm=name;clearTimeout(vArmT);vArmT=setTimeout(function(){vArm='';vRender();},4000);}
+function vClock(){var m=Math.floor(vLeft/60),s=vLeft%60;return m+':'+pad(s)+' \u00B7 hold on';}
+function vStop(){clearInterval(vTimer);vTimer=null;}
+function vRender(){
+  var b=$('vbody');if(!b)return;var h='',t=today();
+  if(!V){
+    h='<div class="vgate"><div class="vic">\uD83D\uDD12</div><div class="vtitle">Private</div><p class="vsub">Set a passcode only you know. This locks every time you leave it.</p>'+
+      '<input class="vpin" id="vPin1" type="password" inputmode="numeric" autocomplete="off" placeholder="Passcode">'+
+      '<input class="vpin" id="vPin2" type="password" inputmode="numeric" autocomplete="off" placeholder="Type it again">'+
+      '<p class="vsub" style="margin-top:20px">When did your current streak start?</p><input class="vdate" id="vStart" type="date" value="'+t+'" max="'+t+'">'+
+      '<div class="verr">'+esc(vErr)+'</div><button class="vmain" data-act="vsetup">Lock it in</button></div>';
+  }else if(!vUnlocked){
+    h='<div class="vgate"><div class="vic">\uD83D\uDD12</div><div class="vtitle">Private</div>'+
+      '<input class="vpin'+(vErr?' shake':'')+'" id="vPin" type="password" inputmode="numeric" autocomplete="off" placeholder="Passcode">'+
+      '<div class="verr">'+esc(vErr)+'</div><button class="vmain" data-act="vunlock">Unlock</button>'+
+      '<button class="vlink" data-act="vforgot">'+(vArm==='forgot'?'This erases everything in here. Tap again to confirm.':'Forgot passcode?')+'</button></div>';
+  }else{
+    var d=vDays(),best=Math.max(V.best,d),prev=0,next=MS[MS.length-1];
+    for(var i=0;i<MS.length;i++){if(MS[i]<=d)prev=MS[i];else{next=MS[i];break;}}
+    if(d>=next)next=d+100;
+    var pct=(d-prev)/(next-prev),C=251.33,mon=0,p=t.slice(0,7);
+    for(var q=0;q<40;q++){var kk=dayKey(q);if(kk.slice(0,7)!==p)break;if(cleanOn(kk))mon++;}
+    var pool=VLINES.filter(function(l){return d>=2||l.indexOf('{n}')<0;}),line=pool[((dayIndex(t)%pool.length)+pool.length)%pool.length].replace('{n}',d);
+    var lastSlip=V.history.length?V.history[V.history.length-1].d:0;
+    h='<div class="vhead"><div class="vtitle">Private</div><button class="vbtn-s" data-act="vlock">Lock</button></div>';
+    if(V.slipMsg===t)h+='<div class="vcard vslipcard"><div class="vk">Fresh start</div><p class="vp">One slip doesn\u2019t erase the work. You still kept '+lastSlip+(lastSlip===1?' day':' days')+', and you\u2019re still the person who did that. Figure out what led to it, then start again. Tomorrow counts.</p></div>';
+    h+='<div class="vcard vhero"><div class="vring"><svg width="96" height="96" viewBox="0 0 96 96"><defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a53"/><stop offset="1" stop-color="#ffb27f"/></linearGradient></defs>'+
+       '<circle cx="48" cy="48" r="40" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="9"/>'+
+       '<circle cx="48" cy="48" r="40" fill="none" stroke="url(#vg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+(C*(1-pct))+'"/></svg><span>\uD83D\uDD25</span></div>'+
+       '<div><div class="vbig">'+d+'</div><div class="vlab">'+(d===1?'day':'days')+' clean</div><div class="vsub">since '+esc(nice(V.start,{weekday:'short',month:'short',day:'numeric'}))+'</div>'+
+       '<div class="vms">'+(MS.indexOf(d)>-1?d+'-day milestone. Keep going.':(next-d)+' to go until '+next)+'</div></div></div>';
+    h+='<div class="vcard"><div class="vk">Today\u2019s reminder</div><div class="vline">'+esc(line)+'</div></div>';
+    h+='<div class="vcard"><div class="vk">Feeling an urge?</div>'+(vUrge?
+       '<ol class="vsteps"><li>Stand up and leave the room you\u2019re in.</li><li>Drop and do 20 pushups, or splash cold water on your face.</li><li>Read your reasons below.</li><li>Give it 10 minutes. The urge peaks, then fades.</li></ol>'+
+       '<button class="vmain" data-act="vtimer" id="vTimerBtn">'+(vTimer?vClock():(vLeft===-1?'You made it. It passed.':'Start 10-minute timer'))+'</button>'
+       :'<button class="vmain" data-act="vurge">Get through it</button>')+'</div>';
+    h+='<div class="vcard"><div class="vk">My reasons</div><textarea class="vtext" id="vReasons" placeholder="Why you\u2019re doing this. Read it when it gets hard.">'+esc(V.reasons)+'</textarea></div>';
+    h+='<div class="vcard vstats"><div><b>'+best+'</b><span>longest streak</span></div><div><b>'+mon+'</b><span>clean '+(mon===1?'day':'days')+' this month</span></div></div>';
+    h+='<div class="vcard"><div class="vk">Streak start</div><input class="vdate" id="vDate" type="date" value="'+V.start+'" max="'+t+'"><p class="vsub" style="margin-top:8px">Only change this to fix the date.</p></div>';
+    h+='<button class="vghost" data-act="vslip">'+(vArm==='slip'?'Tap again to confirm':'I slipped')+'</button>';
+  }
+  b.innerHTML=h;
+}
+function openVault(){vArm='';vErr='';vUrge=false;$('vault').classList.add('on');$('vault').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';vRender();
+  setTimeout(function(){var p=$('vPin')||$('vPin1');if(p)try{p.focus();}catch(e){}},60);}
+function closeVault(){vStop();vUnlocked=false;vArm='';$('vault').classList.remove('on');$('vault').setAttribute('aria-hidden','true');document.body.style.overflow='';renderAll();}
+function vSetup(){
+  var a1=$('vPin1').value,a2=$('vPin2').value,st=$('vStart').value;
+  if(a1.length<4){vErr='Use at least 4 digits.';vRender();return;}
+  if(a1!==a2){vErr='Those don\u2019t match.';vRender();return;}
+  var salt=rid()+rid();
+  V={hash:sha256(salt+a1),salt:salt,start:(isKey(st)&&st<=today())?st:today(),best:0,history:[],reasons:'',slipMsg:''};
+  vsave();vUnlocked=true;vErr='';vRender();
+}
+function vUnlock(){var p=$('vPin').value;
+  if(V&&sha256(V.salt+p)===V.hash){vUnlocked=true;vErr='';vRender();}
+  else{vErr='Wrong passcode.';vRender();var el=$('vPin');if(el)try{el.focus();}catch(e){}}
+}
+(function(){var tm=null,el=$('goalsTitle');if(!el)return;
+  function start(){clear();tm=setTimeout(function(){tm=null;openVault();},800);}
+  function clear(){if(tm){clearTimeout(tm);tm=null;}}
+  el.addEventListener('touchstart',start,{passive:true});['touchend','touchcancel'].forEach(function(n){el.addEventListener(n,clear);});
+  el.addEventListener('touchmove',clear,{passive:true});
+  el.addEventListener('mousedown',start);['mouseup','mouseleave'].forEach(function(n){el.addEventListener(n,clear);});
+  el.addEventListener('contextmenu',function(e){e.preventDefault();});
+})();
+document.addEventListener('input',function(e){if(e.target&&e.target.id==='vReasons'&&V&&vUnlocked){V.reasons=e.target.value.slice(0,3000);vsave();}});
+document.addEventListener('change',function(e){if(e.target&&e.target.id==='vDate'&&V&&vUnlocked){var v=e.target.value;if(isKey(v)&&v<=today()){V.start=v;vsave();vRender();}}});
+
 /* ---------- navigation ---------- */
 function go(tab){if(TABS.indexOf(tab)<0)tab='today';
   TABS.forEach(function(n){$('t-'+n).classList.toggle('on',n===tab);});
@@ -568,11 +777,11 @@ function go(tab){if(TABS.indexOf(tab)<0)tab='today';
 function addCustom(){
   var parts=$('customIn').value.split(/[,\n]/).map(function(s){return s.replace(/\s+/g,' ').trim();}).filter(Boolean);
   if(!parts.length)return;
-  var k=dayKey(viewBack),before=list(k).length;if(!S.days[k])S.days[k]=[];
+  var k=dayKey(viewBack),before=wins(k);if(!S.days[k])S.days[k]=[];
   parts.forEach(function(p){S.days[k].push({id:rid(),t:p.slice(0,80),g:matchGoal(p)});});
-  $('customIn').value='';save();renderToday();cheer(before,list(k).length);
+  $('customIn').value='';save();renderToday();cheer(before,wins(k));
 }
-function cheer(a,b){if(a<WIN_AT&&b>=WIN_AT)toast('Day won. Proud of you.',false);else if(a<10&&b>=10)toast('10 wins. Huge day.',false);}
+function cheer(a,b){if(a<WIN_AT&&b>=WIN_AT)toast('Day won. Proud of you.',false);else if(a<HUGE&&b>=HUGE)toast(HUGE+' wins. Huge day.',false);}
 
 /* ---------- actions ---------- */
 document.addEventListener('click',function(e){
@@ -584,10 +793,10 @@ document.addEventListener('click',function(e){
     case 'next':if(viewBack>0){viewBack--;renderToday();}return;
     case 'win':{
       if(!ITEMS[id])return;
-      var k=dayKey(viewBack),wid='w_'+id,before=list(k).length;
+      var k=dayKey(viewBack),wid='w_'+id,before=wins(k);
       if(has(k,wid)){S.days[k]=S.days[k].filter(function(x){return x.id!==wid;});if(!S.days[k].length)delete S.days[k];}
       else{if(!S.days[k])S.days[k]=[];S.days[k].push({id:wid,t:ITEMS[id].t,g:ITEMS[id].g});}
-      save();renderToday();cheer(before,list(k).length);return;
+      save();renderToday();cheer(before,wins(k));return;
     }
     case 'addcustom':addCustom();return;
     case 'unlog':{var k2=dayKey(viewBack);if(S.days[k2]){S.days[k2]=S.days[k2].filter(function(x){return x.id!==id;});if(!S.days[k2].length)delete S.days[k2];save();renderToday();}return;}
@@ -613,6 +822,19 @@ document.addEventListener('click',function(e){
     case 'lmove':{var x=S.loops.filter(function(y){return y.id===id;})[0];if(x){x.bin=el.getAttribute('data-bin');save();renderClear();}return;}
     case 'ldel':S.loops=S.loops.filter(function(y){return y.id!==id;});save();renderClear();return;
     case 'panic':openPanic();return;
+    case 'cprev':if(calBack<24){calBack++;renderCal();}return;
+    case 'cnext':if(calBack>0){calBack--;renderCal();}return;
+    case 'cday':{var ck=el.getAttribute('data-k');if(!isKey(ck))return;var back=dayIndex(today())-dayIndex(ck);if(back>=0&&back<=120){viewBack=back;go('today');}return;}
+    case 'vsetup':vSetup();return;
+    case 'vunlock':vUnlock();return;
+    case 'vlock':closeVault();return;
+    case 'vforgot':if(vArm==='forgot'){V=null;vsave();vArm='';vErr='';vRender();renderAll();}else{arm('forgot');vRender();}return;
+    case 'vurge':vUrge=true;vRender();return;
+    case 'vtimer':if(vTimer)return;vLeft=600;vRender();vTimer=setInterval(function(){vLeft--;var tb=$('vTimerBtn');
+      if(vLeft<=0){vStop();vLeft=-1;if(tb)tb.textContent='You made it. It passed.';return;}if(tb)tb.textContent=vClock();},1000);return;
+    case 'vslip':if(vArm==='slip'){var st=today(),dd=vDays();V.history.push({s:V.start,e:st,d:dd});V.best=Math.max(V.best,dd);V.start=st;V.slipMsg=st;vArm='';vsave();vRender();try{$('vault').scrollTo(0,0);}catch(e){}}
+      else{arm('slip');vRender();}return;
+
     case 'pclose':closePanic();return;
     case 'pnext':P.step++;renderPanic();return;
     case 'pground':P.g++;if(P.g>=GROUND.length)P.step=3;renderPanic();return;
@@ -622,13 +844,15 @@ document.addEventListener('click',function(e){
 });
 document.addEventListener('keydown',function(e){
   if(e.key==='Enter'&&e.target&&e.target.id==='customIn'){e.preventDefault();addCustom();}
+  if(e.key==='Enter'&&e.target&&e.target.id==='vPin'){e.preventDefault();vUnlock();}
+  if(e.key==='Enter'&&e.target&&e.target.id==='vPin2'){e.preventDefault();vSetup();}
   if(e.key==='Escape'&&$('panic').classList.contains('on'))closePanic();
 });
 
 /* ---------- roll to a new day ---------- */
 var lastDay=today();
 function checkDay(){var t=today();if(t!==lastDay){lastDay=t;viewBack=0;}renderAll();}
-document.addEventListener('visibilitychange',function(){if(!document.hidden)checkDay();});
+document.addEventListener('visibilitychange',function(){if(document.hidden){if($('vault').classList.contains('on'))closeVault();}else checkDay();});
 window.addEventListener('pageshow',checkDay);
 setInterval(function(){if(today()!==lastDay)checkDay();},20000);
 
